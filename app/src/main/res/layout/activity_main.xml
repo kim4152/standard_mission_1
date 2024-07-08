@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/google_logo"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_cons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/background_edit_text"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/imgView">
+
+        <ImageView
+            android:id="@+id/ic_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_search"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@id/google_mike"
+            app:layout_constraintStart_toEndOf="@id/ic_search" />
+
+        <ImageView
+            android:id="@+id/google_mike"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:src="@drawable/google_mike"
+            app:layout_constraintEnd_toStartOf="@id/google_lens" />
+
+        <ImageView
+            android:id="@+id/google_lens"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:src="@drawable/google_lens"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/icons_cons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_cons">
+
+        <ImageView
+            android:id="@+id/icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_icon"
+            android:padding="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/icon2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/icon_text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="네이버"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="@id/icon1"
+            app:layout_constraintEnd_toEndOf="@id/icon1"
+            app:layout_constraintTop_toBottomOf="@id/icon1"/>
+
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_icon"
+            android:padding="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/icon3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/icon1"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/icon_text2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="유튜브"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="@id/icon2"
+            app:layout_constraintEnd_toEndOf="@id/icon2"
+            app:layout_constraintTop_toBottomOf="@id/icon2"/>
+
+
+        <ImageView
+            android:id="@+id/icon3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_icon"
+            android:padding="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/icon4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/icon2"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/icon_text3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="스파르타 코딩클럽"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="@id/icon3"
+            app:layout_constraintEnd_toEndOf="@id/icon3"
+            app:layout_constraintTop_toBottomOf="@id/icon3"/>
+
+
+        <ImageView
+            android:id="@+id/icon4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_icon"
+            android:padding="10dp"
+            android:src="@drawable/ic_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/icon3"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/icon_text4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintStart_toStartOf="@id/icon4"
+            app:layout_constraintEnd_toEndOf="@id/icon4"
+            app:layout_constraintTop_toBottomOf="@id/icon4"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
