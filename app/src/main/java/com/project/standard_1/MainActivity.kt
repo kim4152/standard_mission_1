@@ -5,19 +5,17 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.project.standard_1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var icon1 :ImageView
-    private lateinit var icon2 :ImageView
-    private lateinit var icon3 :ImageView
-    private lateinit var icon4 :ImageView
-    private lateinit var iconText : TextView
+private lateinit var binding: ActivityMainBinding
 
     companion object{
         val IMAGE_URI = "imageUri"
@@ -27,8 +25,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
         init()
 
         val getContent = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -46,38 +45,37 @@ class MainActivity : AppCompatActivity() {
                         .load(uri)
                         .centerCrop()
                         .circleCrop()
-                        .into(icon4)
+                        .into(binding.icon4)
                 }
 
                 val text = data?.getStringExtra(IMAGE_NAME) ?: "No Name"
-                iconText.text = text
+                binding.iconText4.text = text
             }
         }
 
-        icon4.setOnClickListener{
+        binding.icon4.setOnClickListener{
             val intent = Intent(this,IconAdd::class.java)
             getContent.launch(intent)
+        }
+
+        binding.textView.setOnClickListener {
+            val intent = Intent(this,SearchActivity::class.java)
+            startActivity(intent)
         }
     }
 
     fun init(){
-        icon1 = findViewById(R.id.icon1)
-        icon2 = findViewById(R.id.icon2)
-        icon3 = findViewById(R.id.icon3)
-        icon4 = findViewById(R.id.icon4)
-        iconText = findViewById(R.id.icon_text4)
-
         Glide.with(this )
             .load(R.drawable.naver)
             .centerCrop()
-            .into(icon1)
+            .into(binding.icon1)
         Glide.with(this )
             .load(R.drawable.youtube)
             .centerCrop()
-            .into(icon2)
+            .into(binding.icon2)
         Glide.with(this )
             .load(R.drawable.sparta)
             .centerCrop()
-            .into(icon3)
+            .into(binding.icon3)
     }
 }

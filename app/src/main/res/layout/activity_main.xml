@@ -31,8 +31,8 @@
             android:src="@drawable/ic_search"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/edit_text"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@null"
